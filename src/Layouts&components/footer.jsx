@@ -2,11 +2,11 @@ import { FaTwitter, FaLinkedin, FaEnvelope, FaArrowUp, FaFacebook, FaYoutube } f
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-300 pt-12 pb-8 relative select-none">
+    <footer className="bg-neutral-950 text-gray-300 pb-8 pt-6 relative select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-row md:grid-cols-4 gap-28">
+        <div className="flex flex-row md:grid-cols-4 gap-28 max-[820px]:flex-col max-[820px]:gap-6">
           {/* Branding and short description */}
-          <div className="max-w-[400px] flex flex-col gap-1">
+          <div className=" max-w-[400px] flex flex-col gap-1">
             <div className="flex items-center mb-4 space-x-2">
               <span className="text-3xl font-bold text-indigo-400">AUTOAI</span>
               <span className="font-semibold text-white text-xl">Project</span>
@@ -17,7 +17,7 @@ export default function Footer() {
             
             <div className="flex flex-row items-center gap-3">
                 <input placeholder="Subscribe to unlock" className="text-white text-[12px] placeholder-neutral-500 p-2 rounded-sm bg-transparent h-[40px] w-[350px] border border-neutral-500"/>
-                <button className="h-[35px] w-[70px] px-2 rounded-md flex justify-center items-center text-white text-[14px] hover:opacity-80 cursor-pointer default-gradient">
+                <button className="h-[35px] w-[70px] px-2 rounded-md flex justify-center items-center text-white text-[14px] hover:opacity-80 cursor-pointer bg-indigo-500">
                     Subscribe
                 </button>
             </div>

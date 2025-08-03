@@ -1,0 +1,162 @@
+## Pages Needed for AI News Website
+
+- **Home Page**
+  - Central hub with featured articles, trending topics, and personalized recommendations
+  - Hero section, category navigation, real-time updates
+
+- **Article Detail Page**
+  - Full article content with rich media (images/videos)
+  - Related articles section, comment functionality
+
+- **Trending Topics Page**
+  - Curated list of currently popular AI subjects
+  - Algorithmically ranked based on engagement metrics
+
+- **Category Page**
+  - Content filtered by categories (e.g., Machine Learning, Ethics, Robotics)
+  - Sub-category navigation and filtering options
+
+- **Search Results Page**
+  - Full-text search results with relevance ranking
+  - Filters by date, popularity, and content type
+
+- **User Profile Page**
+  - Personal dashboard with reading history, saved articles, and preferences
+  - Account management and notification settings
+
+- **Login/Registration Page**
+  - Secure authentication with OAuth support
+  - Password recovery and 2FA options
+
+- **Admin Dashboard**
+  - Content management interface for editors
+  - Analytics dashboard and user management
+
+- **Notifications Page**
+  - Centralized hub for alerts (new articles, comments, mentions)
+  - Customizable notification preferences
+
+- **About Page**
+  - Company mission, team bios, editorial guidelines
+  - Transparency report and funding information
+
+- **Contact Page**
+  - Support channels and inquiry forms
+  - Editorial submission guidelines
+
+## PostgreSQL Storage Structure
+
+### User Management System
+
+- **users table**
+  - Stores authentication credentials (email, hashed passwords)
+  - Account status and role associations
+
+- **user_profiles table**
+  - Extended user data (name, bio, profile picture URL)
+  - Social media links and preferences
+
+- **roles table**
+  - Defines permission levels (admin, editor, author, subscriber)
+
+- **user_roles junction table**
+  - Manages many-to-many user/role relationships
+
+### Content Management System
+
+- **posts/articles table**
+  - Core content storage (title, body, metadata)
+  - Publishing status and version history
+
+- **categories table**
+  - Hierarchical content classification system
+
+- **tags table**
+  - Keyword taxonomy for content discovery
+
+- **post_categories junction table**
+  - Links articles to multiple categories
+
+- **post_tags junction table**
+  - Associates tags with content pieces
+
+### Media Management
+
+- **media table**
+  - Metadata for images/videos (URLs, dimensions, alt text)
+  - Copyright and attribution information
+
+### Engagement System
+
+- **comments table**
+  - Threaded comment system with nesting support
+  - Moderation status and voting metrics
+
+### Analytics Infrastructure
+
+- **search_indexes table**
+  - Optimized full-text search data
+  - Vector embeddings for semantic search
+
+- **Analytics tables (hourly_stats, daily_stats, etc.)**
+  - Time-partitioned engagement metrics
+  - User behavior and content performance data
+
+### Notification System
+
+- **notifications table**
+  - Message templates and delivery schedules
+
+- **notification_recipients table**
+  - Targeted user groups for notifications
+
+- **notification_logs table**
+  - Delivery status and engagement tracking
+
+### Administrative Backend
+
+- **user_preferences table**
+  - Notification settings and content preferences
+
+- **user_sessions table**
+  - Active login sessions and device information
+
+- **admin_logs table**
+  - Audit trail for administrative actions
+
+- **content_moderation table**
+  - Flagged content and moderation history
+
+- **site_settings table**
+  - Configurable platform parameters
+
+### Version Control
+
+- **content_versions table**
+  - Historical revisions of articles
+  - Change tracking and rollback capabilities
+
+### Backup System
+
+- **backup_logs table**
+  - Automated backup history and verification
+
+## Storage Facilities Beyond PostgreSQL
+
+- **Cloud Storage (AWS S3/Google Cloud Storage)**
+  - For media files (images, videos, documents)
+  - Versioned and access-controlled buckets
+
+- **CDN Integration**
+  - Global distribution for static assets
+  - Caching strategy for high-traffic content
+
+- **Redis Cache**
+  - Session storage and frequent query caching
+  - Real-time analytics data processing
+
+- **Search Engine (Elasticsearch/Typesense)**
+  - Specialized full-text search capabilities
+  - Synonym management and typo tolerance
+
+This architecture provides a scalable foundation for your AI news platform, balancing relational data integrity with specialized storage solutions for optimal performance.
